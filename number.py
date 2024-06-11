@@ -10,7 +10,7 @@ class Number:
 
     def __init__(self, number):
         self.number = number
-        self.text = self.fontObj.render(str(random.randint(0, 9)), True, (255, 255, 255))
+        self.text = self.fontObj.render(str(self.number), True, (255, 255, 255))
         self.rect = self.text.get_rect()
         self.location = Vector(random.randint(25, 950), random.randint(75, 550))
         self.moveVector = Vector(random.randint(-9, 9), random.randint(-9, 9))
@@ -22,7 +22,3 @@ class Number:
     def move(self):
         self.rect.x, self.rect.y = self.location.x, self.location.y
         self.location += self.moveVector.normalize() * self.speed
-
-    def change_vector(self):
-        self.moveVector = Vector(random.randint(-9, 9), random.randint(-9, 9))
-
